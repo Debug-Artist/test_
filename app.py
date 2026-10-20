@@ -366,6 +366,8 @@ def app_startup():
 
 @app.get("/", response_class=HTMLResponse)
 async def serve_index(request: Request):
+    plot_@app.get("/", response_class=HTMLResponse)
+async def serve_index(request: Request):
     plot_b64 = render_loss_plot_base64()
     weights_summary = [
         {
@@ -378,7 +380,7 @@ async def serve_index(request: Request):
         }
         for i, col in enumerate(FEATURE_COLUMNS)
     ]
-        return templates.TemplateResponse(
+    return templates.TemplateResponse(
         request=request,
         name="index.html",
         context={
