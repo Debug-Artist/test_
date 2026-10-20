@@ -378,10 +378,10 @@ async def serve_index(request: Request):
         }
         for i, col in enumerate(FEATURE_COLUMNS)
     ]
-    return templates.TemplateResponse(
-        "index.html",
-        {
-            "request": request,
+        return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context={
             "problem_statement": state.problem_statement,
             "is_demo_mode": state.is_demo_mode,
             "dataset_rows": state.dataset_rows,
